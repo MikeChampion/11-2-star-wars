@@ -10,9 +10,11 @@ app.get("/", (req, res) => {
   res.send("<h1>Star Wars API</h1>");
 });
 
+app.use(express.json());
+
 // Any request coming to /api/* will be handled by our router
 app.use("/api", router);
 
 app.listen(PORT, () => {
-  // console.log("server running");
+  console.log("server running");
 });
